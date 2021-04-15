@@ -1,0 +1,33 @@
+<div class="fade-in">
+    <img id="logo" src="assets/crm4p-logo.png">
+<section fxLayout="column" fxLayoutAlign="space-between">
+    <a [routerLink]="['/case/inquiry/create']">
+        <article fxLayoutAlign="space-between center">
+            <mat-icon>help</mat-icon>
+            <div fxFlex="1 1 100%" fxLayout="column" fxLayoutAlign="start start">
+                <p>Inquiry</p>
+                <small>Ask any question and we will get you the answer</small>
+            </div>
+        </article>
+    </a>
+    <a [routerLink]="['/case/complain/create']">
+        <article  fxLayoutAlign="space-between center">
+            <mat-icon >sentiment_very_dissatisfied </mat-icon>
+            <div fxFlex="1 1 100%" fxLayout="column" fxLayoutAlign="start start">
+                <p>Complain</p>
+                <small>Not satified with a service? Let us know and we will help you out. Promise.</small>
+            </div>
+           
+        </article>
+    </a>
+    <a [routerLink]="['/case/compliment/create']">
+        <article  fxLayoutAlign="space-between center">
+            <mat-icon>sentiment_satisfied_alt</mat-icon>
+            <div fxFlex="1 1 100%" fxLayout="column" fxLayoutAlign="start start">
+                <p>Compliment</p>
+                <small>Expectations exceeded? We would love to hear about your experience!</small>
+            </div>      
+        </article>
+    </a>
+</section>
+</div>

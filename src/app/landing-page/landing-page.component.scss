@@ -1,0 +1,57 @@
+@import '~@angular/material/theming';
+@import '../../styles.scss';
+#logo {
+    width:200px;
+    margin:0 auto;
+    display: block;
+    margin-top: 16px;
+}
+section {
+    margin-top: 16px;
+    a {
+        background-color: mat-color($app-primary);
+        color:white;
+        min-width: 100px;
+        padding:24px;
+        margin:8px;
+        border-radius: 16px;
+        text-align: center;
+        text-decoration: none;
+        transition: 0.4s all cubic-bezier(0.250, 0.460, 0.450, 0.940);
+        @include mat-elevation(4);
+
+        &:hover {
+            background-color: mat-color($app-accent);
+            transition: 0.1s all cubic-bezier(0.250, 0.460, 0.450, 0.940);
+            cursor: pointer;
+            @include mat-elevation(8);
+        }
+
+        &:active {
+            opacity: 0.7;
+        }
+
+        article {
+            width: 100%;
+            .mat-icon {
+                height: 48px;
+                width: 48px;
+                font-size: 48px;
+                margin-right: 16px;
+            }
+    
+            p {
+                margin:0;
+                text-transform: uppercase;
+                font-weight: bold;
+            }
+    
+            small {
+                text-align: left;
+                margin:0;
+                opacity: 0.8;
+            }
+        }
+    }
+    
+}

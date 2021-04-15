@@ -1,0 +1,28 @@
+<div class="fade-in box">
+    <div class="page-header" fxLayout="row" fxLayoutAlign="space-around center">
+        <h1>Create New {{inquiry.inquiryType}}</h1>
+        <div class="spacer"></div>
+        <a mat-stroked-button color="primary" [routerLink]="['/home']">Return</a>
+        <h3></h3>
+    </div>
+
+    <section fxLayout="column">
+        
+        <mat-form-field appearance="outline">
+            <mat-label>Describe your {{inquiry.inquiryType}}</mat-label>
+            <textarea matInput rows="15" required [(ngModel)]="inquiry.content"></textarea>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Select Organization</mat-label>
+            <mat-select [(ngModel)]="inquiry.organization">
+                <mat-option *ngFor="let organization of organizations"  [value]="organization">
+                    {{organization}}
+                  </mat-option>
+            </mat-select>
+          </mat-form-field>
+
+        <button (click)="createInquiry();" mat-raised-button color="primary">Submit <mat-icon>send</mat-icon> </button>
+    </section>
+
+</div>

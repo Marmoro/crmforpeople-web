@@ -1,6 +1,6 @@
 <div class="fade-in box">
     <div class="page-header" fxLayout="row" fxLayoutAlign="space-around center">
-        <h1>Create New {{inquiry.inquiryType}}</h1>
+        <h1>Create New {{case.caseType}}</h1>
         <div class="spacer"></div>
         <a mat-stroked-button color="primary" [routerLink]="['/home']">Return</a>
         <h3></h3>
@@ -9,20 +9,20 @@
     <section fxLayout="column">
         
         <mat-form-field appearance="outline">
-            <mat-label>Describe your {{inquiry.inquiryType}}</mat-label>
-            <textarea matInput rows="15" required [(ngModel)]="inquiry.content"></textarea>
+            <mat-label>Describe your {{case.caseType}}</mat-label>
+            <textarea matInput rows="15" required [(ngModel)]="case.content"></textarea>
         </mat-form-field>
 
         <mat-form-field appearance="outline">
             <mat-label>Select Organization</mat-label>
-            <mat-select [(ngModel)]="inquiry.organization">
+            <mat-select [(ngModel)]="case.organization">
                 <mat-option *ngFor="let organization of organizations"  [value]="organization">
-                    {{organization}}
+                    {{organization.companyName}}
                   </mat-option>
             </mat-select>
           </mat-form-field>
 
-        <button (click)="createInquiry();" mat-raised-button color="primary">Submit <mat-icon>send</mat-icon> </button>
+        <button (click)="createCase();" mat-raised-button color="primary">Submit <mat-icon>send</mat-icon> </button>
     </section>
 
 </div>

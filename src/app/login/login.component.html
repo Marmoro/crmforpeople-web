@@ -1,0 +1,23 @@
+<mat-card class="fade-in">
+  <div [ngSwitch]="formState">
+    <div class="fade-in" fxLayout="column" *ngSwitchCase="states.ENTER_EMAIL">
+      <mat-form-field appearance="fill">
+        <mat-label>Email</mat-label>
+        <input matInput [(ngModel)]="email">
+      </mat-form-field>
+
+      <button (click)="onEnterEmail()" mat-raised-button color="primary">Login</button>
+    </div>
+  </div>
+
+  <div [ngSwitch]="formState">
+    <div class="fade-in" fxLayout="column" *ngSwitchCase="states.ENTER_OTP">
+      <mat-form-field appearance="fill">
+        <mat-label>Enter OTP</mat-label>
+        <input matInput [(ngModel)]="password">
+      </mat-form-field>
+
+      <button (click)="onEnterOTP()" mat-raised-button color="primary">Verify</button>
+    </div>
+  </div>
+</mat-card>

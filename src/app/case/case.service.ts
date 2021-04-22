@@ -13,7 +13,23 @@ export class CaseService {
 
   create(newCase: Case) {
     return this.http
-      .post(`${this.url}/case`, newCase)
+      .post(`${this.url}/case`, newCase, { withCredentials: true })
+      .pipe(map(data => data), catchError((err: HttpErrorResponse) => {
+        return throwError(err);
+      }));
+  }
+
+  get(id?: Number) {
+    if (id) {
+      return this.http
+      .get(`${this.url}/case/${id}`, { withCredentials: true })
+      .pipe(map(data => data), catchError((err: HttpErrorResponse) => {
+        return throwError(err);
+      }));
+    }
+    
+    return this.http
+      .get(`${this.url}/case`, { withCredentials: true })
       .pipe(map(data => data), catchError((err: HttpErrorResponse) => {
         return throwError(err);
       }));

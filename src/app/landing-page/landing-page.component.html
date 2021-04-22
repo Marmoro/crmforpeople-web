@@ -1,33 +1,62 @@
 <div class="fade-in">
-    <img id="logo" src="assets/crm4p-logo.png">
-<section fxLayout="column" fxLayoutAlign="space-between">
+  <img id="logo" src="assets/crm4p-logo.png">
+  <section fxLayout="column" fxLayoutAlign="space-between">
     <a [routerLink]="['/case/inquiry/create']">
-        <article fxLayoutAlign="space-between center">
-            <mat-icon>help</mat-icon>
-            <div fxFlex="1 1 100%" fxLayout="column" fxLayoutAlign="start start">
-                <p>Inquiry</p>
-                <small>Ask any question and we will get you the answer</small>
-            </div>
-        </article>
+      <article fxLayoutAlign="space-between center">
+        <mat-icon>help</mat-icon>
+        <div fxFlex="1 1 100%" fxLayout="column" fxLayoutAlign="start start">
+          <p>Inquiry</p>
+          <small>Ask any question and we will get you the answer</small>
+        </div>
+      </article>
     </a>
     <a [routerLink]="['/case/complain/create']">
-        <article  fxLayoutAlign="space-between center">
-            <mat-icon >sentiment_very_dissatisfied </mat-icon>
-            <div fxFlex="1 1 100%" fxLayout="column" fxLayoutAlign="start start">
-                <p>Complain</p>
-                <small>Not satified with a service? Let us know and we will help you out. Promise.</small>
-            </div>
-           
-        </article>
+      <article fxLayoutAlign="space-between center">
+        <mat-icon>sentiment_very_dissatisfied </mat-icon>
+        <div fxFlex="1 1 100%" fxLayout="column" fxLayoutAlign="start start">
+          <p>Complain</p>
+          <small>Not satified with a service? Let us know and we will help you out. Promise.</small>
+        </div>
+
+      </article>
     </a>
     <a [routerLink]="['/case/compliment/create']">
-        <article  fxLayoutAlign="space-between center">
-            <mat-icon>sentiment_satisfied_alt</mat-icon>
-            <div fxFlex="1 1 100%" fxLayout="column" fxLayoutAlign="start start">
-                <p>Compliment</p>
-                <small>Expectations exceeded? We would love to hear about your experience!</small>
-            </div>      
-        </article>
+      <article fxLayoutAlign="space-between center">
+        <mat-icon>sentiment_satisfied_alt</mat-icon>
+        <div fxFlex="1 1 100%" fxLayout="column" fxLayoutAlign="start start">
+          <p>Compliment</p>
+          <small>Expectations exceeded? We would love to hear about your experience!</small>
+        </div>
+      </article>
     </a>
-</section>
+  </section>
+
+  <div>
+
+  </div>
+
+  <div [ngSwitch]="loginStatus">
+
+    <div *ngSwitchCase="true" style="margin-top: 32px;" >
+      <div fxLayout="row" fxLayoutAlign="space-between">
+        <a mat-button color="primary" [routerLink]="['/case/list']">
+          My Cases
+        </a>
+
+        <button mat-button color="accent" (click)="onLogOut()">
+          <mat-icon>logout</mat-icon> Log Out
+        </button>
+      </div>
+    </div>
+
+    <div *ngSwitchCase="false" style="margin-top: 32px;" >
+      <div fxLayout="row" fxLayoutAlign="end">
+        <a mat-button color="primary" [routerLink]="['/login']">
+          <mat-icon>login</mat-icon> Log In
+        </a>
+      </div>
+    </div>
+
+  </div>
+
 </div>

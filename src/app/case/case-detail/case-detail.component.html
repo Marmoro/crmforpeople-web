@@ -1,0 +1,16 @@
+<div class="fade-in">
+  <mat-card fxLayout="column">
+    <small>{{case.timestamp |date}}</small>
+    <div class="case-detail-container" fxLayout="row wrap">
+      <span>Case ID: {{case.id}}</span>
+      <span>Case Type: {{case.caseType}}</span>
+      <span>Case Status: {{case.caseStatus}}</span>
+    </div>
+    <p class="case-content">{{case.content}}</p>
+  </mat-card>
+
+  <div style="margin-top: 16px;" fxLayout="row" fxLayoutAlign="end">
+    <a mat-button color="primary" [routerLink]="['/case/list']">Return</a>
+  </div>
+
+</div>

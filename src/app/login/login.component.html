@@ -8,9 +8,7 @@
 
       <button (click)="onEnterEmail()" mat-raised-button color="primary">Login</button>
     </div>
-  </div>
 
-  <div [ngSwitch]="formState">
     <div class="fade-in" fxLayout="column" *ngSwitchCase="states.ENTER_OTP">
       <mat-form-field appearance="fill">
         <mat-label>Enter OTP</mat-label>

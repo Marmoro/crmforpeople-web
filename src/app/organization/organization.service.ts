@@ -8,7 +8,7 @@ import { throwError } from 'rxjs';
   providedIn: 'root'
 })
 export class OrganizationService {
-  private url = 'http://localhost:3000';
+  private url = 'http://172.16.18.102:3000';
   constructor(private http: HttpClient) { }
 
   get() {

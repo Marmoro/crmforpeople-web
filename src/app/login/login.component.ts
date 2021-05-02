@@ -57,7 +57,7 @@ export class LoginComponent implements OnInit {
           this.formState = states.ENTER_OTP;
           this.password = '';
         }
-        this.router.navigate(['home']);
+        this.router.navigate(['/']);
       },
       error => {
         console.log(error);
